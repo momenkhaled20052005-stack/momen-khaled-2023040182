@@ -2,11 +2,10 @@ name: momen-khaled-id-2023040182
 
 on:
   push:
-    branches:
-     [ "main" ]
+    branches: [ "main" ] 
 
 jobs:
-  build:
+  build_java_image: 
     runs-on: ubuntu-latest
     
     steps:
@@ -16,7 +15,8 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v3
       with:
-        username: YOUR_DOCKER_USERNAME
+      
+        username: YOUR_DOCKER_USERNAME 
         password: ${{ secrets.DOCKER_HUB_TOKEN }} 
 
     - name: Set up Docker Buildx
@@ -28,5 +28,6 @@ jobs:
         context: .
         push: true
         tags: |
+          
           YOUR_DOCKER_USERNAME/momen_khaled_2023040182:latest 
         file: ./Dockerfile
