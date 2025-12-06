@@ -19,11 +19,4 @@ jobs:
 
    
       
-    - name: Build and Push Docker image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        push: true
-        tags: |
-          YOUR_DOCKER_USERNAME/momen_khaled_2023040182:latest 
-        file: ./Dockerfile
+    
