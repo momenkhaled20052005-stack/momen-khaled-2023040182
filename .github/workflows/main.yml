@@ -3,7 +3,7 @@ name: momen-khaled-id-2023040182
 on:
   push:
     branches:
-     - master
+     -main
 
 jobs:
   build:
@@ -21,4 +21,5 @@ jobs:
     - name: 'printing folder contents'
       run : ls
       
-    
+    tags: |
+     YOUR_DOCKER_USERNAME/momen_khaled_2023040182:latest
