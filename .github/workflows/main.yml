@@ -1,1 +1,31 @@
+name: momen-khaled-id-2023040182 
 
+on:
+  push:
+    branches: [ "main" ] 
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: YOUR_DOCKER_USERNAME 
+        password: ${{ secrets.DOCKER_HUB_TOKEN }} 
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build and Push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: |
+          YOUR_DOCKER_USERNAME/momen_khaled_2023040182:latest 
+        file: ./Dockerfile
