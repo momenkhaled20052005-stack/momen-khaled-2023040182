@@ -16,7 +16,9 @@ jobs:
     - name: 'testing printing'
       run: echo momen
       
+    - uses : actions/checkout@v3
 
-   
+    - name: 'printing folder contents'
+      run : ls
       
     
